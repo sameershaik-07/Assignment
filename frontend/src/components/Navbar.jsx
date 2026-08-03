@@ -12,7 +12,11 @@ export default function Navbar({ user, onLogout }) {
     }
   };
 
-  const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+  let rawUrl = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+  if (!rawUrl.startsWith('http://') && !rawUrl.startsWith('https://')) {
+    rawUrl = `https://${rawUrl}`;
+  }
+  const API_URL = rawUrl.replace(/\/+$/, '');
 
   return (
     <header className="navbar">
