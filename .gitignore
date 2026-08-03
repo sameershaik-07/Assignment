@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Environment Variables
+.env
+*.env
+!.env.example
+
+# Build Outputs
+dist/
+**/dist/
+build/
+**/build/
+
+# Prisma
+/backend/generated/
+
+# Tooling & IDE
+.idea/
+.vscode/
+.claude/
+.windsurf/
+.agents/
+*.log
+.DS_Store
