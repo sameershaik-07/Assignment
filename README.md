@@ -9,7 +9,18 @@
 [![Docker](https://img.shields.io/badge/Docker-Supported-2496ED?style=for-the-badge&logo=docker)](https://www.docker.com)
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-A production-grade full-stack web application built for the **Full Stack Application Deployment & DevOps Assignment**. Features **User Registration with Unique Internal Platform ID Generation**, **Bcrypt Password Salting**, **Stateless JWT Authentication**, **PostgreSQL Database with Prisma ORM**, **Items Module CRUD Operations**, **Glassmorphic Dark Mode UI**, **Interactive Swagger / OpenAPI Specs**, **Docker Containerization**, and **Automated GitHub Actions CI/CD to Railway**.
+A production-grade full-stack web application built for the **Full Stack Application Deployment & DevOps Assignment**. Features **User Registration with Unique Internal Platform ID Generation**, **Bcrypt Password Salting**, **Stateless JWT Authentication**, **PostgreSQL Database with Prisma ORM**, **Items Module CRUD Operations**, **Aesthetic Light / White Theme UI with Indigo Glass Accents**, **Interactive Swagger / OpenAPI Specs**, **Docker Containerization**, and **Automated GitHub Actions CI/CD to Railway**.
+
+---
+
+## 🌐 Live Production Links
+
+| Service | Live Production URL |
+| :--- | :--- |
+| **Frontend Application** | [frontend-production-6714.up.railway.app](https://frontend-production-6714.up.railway.app) |
+| **Backend REST API** | [backend-production-62255.up.railway.app](https://backend-production-62255.up.railway.app) |
+| **Interactive Swagger Docs** | [backend-production-62255.up.railway.app/api-docs](https://backend-production-62255.up.railway.app/api-docs) |
+| **GitHub Repository** | [github.com/sameershaik-07/Assignment](https://github.com/sameershaik-07/Assignment) |
 
 ---
 
@@ -33,16 +44,16 @@ A production-grade full-stack web application built for the **Full Stack Applica
 ## 1. System Architecture & Workflow
 
 ```mermaid
-graph TD
-    Client[Client Browser / Mobile] -->|HTTPS Requests| FE[Frontend: React 19 + Vite (Served via Nginx / Railway)]
-    FE -->|REST API + Bearer JWT| BE[Backend: Express 5 + Node.js]
-    BE -->|Prisma Client ORM| DB[(PostgreSQL Database)]
-    BE -->|Swagger UI| Docs[/api-docs]
-    BE -->|Health Check| Health[/health]
+flowchart TD
+    Client["Client Browser / Mobile"] -->|HTTPS Requests| FE["Frontend: React 19 + Vite (Served via Railway)"]
+    FE -->|REST API + Bearer JWT| BE["Backend: Express 5 + Node.js"]
+    BE -->|Prisma Client ORM| DB[("PostgreSQL Database")]
+    BE -->|Swagger UI| Docs["/api-docs"]
+    BE -->|Health Check| Health["/health"]
 
-    subgraph CI/CD Pipeline (GitHub Actions)
-        GH[GitHub Repository] -->|Push to main| Job1[Job 1: test-and-lint]
-        Job1 -->|Unit & Integration Tests Pass| Job2[Job 2: deploy-to-railway]
+    subgraph "CI/CD Pipeline (GitHub Actions)"
+        GH["GitHub Repository"] -->|Push to main| Job1["Job 1: Test & Lint"]
+        Job1 -->|Tests Pass| Job2["Job 2: Deploy to Railway"]
         Job2 -->|Railway CLI + RAILWAY_TOKEN| BE
         Job2 -->|Railway CLI + RAILWAY_TOKEN| FE
     end
@@ -306,8 +317,8 @@ If a faulty deployment reaches production:
 
 1. **Clone repository**:
    ```bash
-   git clone https://github.com/your-username/assignment.git
-   cd assignment
+   git clone https://github.com/sameershaik-07/Assignment.git
+   cd Assignment
    ```
 
 2. **Configure Environment Variables**:
