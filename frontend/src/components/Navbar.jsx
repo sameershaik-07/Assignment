@@ -15,12 +15,16 @@ export default function Navbar({ user, onLogout }) {
   const API_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
 
   return (
-    <header className="navbar glassmorphism">
+    <header className="navbar">
       <div className="nav-brand">
-        <div className="brand-logo">⚡</div>
+        <div className="brand-logo">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
+          </svg>
+        </div>
         <div>
-          <span className="brand-title">DevOps Deployment App</span>
-          <span className="brand-subtitle">PostgreSQL + Prisma + Railway</span>
+          <span className="brand-title">DevOps Deployment Platform</span>
+          <span className="brand-subtitle">PostgreSQL • Prisma • Railway</span>
         </div>
       </div>
 
@@ -33,7 +37,11 @@ export default function Navbar({ user, onLogout }) {
           rel="noopener noreferrer"
           className="btn-link-docs"
         >
-          📖 API Swagger Docs
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+          </svg>
+          Swagger Docs
         </a>
 
         {user ? (
@@ -41,7 +49,7 @@ export default function Navbar({ user, onLogout }) {
             <span className="user-email">{user.email}</span>
             <button className="platform-id-pill" onClick={handleCopyPlatformId} title="Click to copy Platform ID">
               <code>{user.platformId}</code>
-              <span className="pill-copy-tag">{copied ? 'Copied!' : 'Copy'}</span>
+              <span className="pill-copy-tag">{copied ? '✓ Copied' : 'Copy'}</span>
             </button>
             <button className="btn-secondary btn-sm" onClick={onLogout}>
               Logout
