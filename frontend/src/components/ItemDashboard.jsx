@@ -105,7 +105,6 @@ export default function ItemDashboard({ user }) {
         {/* Create Item Section */}
         <div className="panel-card glassmorphism">
           <h3>Create New Item</h3>
-          <p className="panel-desc">Add records linked to your PostgreSQL owner ID</p>
 
           <form onSubmit={handleCreate}>
             <div className="form-group">
